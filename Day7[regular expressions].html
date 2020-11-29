@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Day7: Regular Expressions</title>
+    </head>
+    <body>
+
+    <script>
+    //QUESTION 7 II:
+    /*
+    Complete the function in the editor below by returning a RegExp object,re , 
+    that matches any string  satisfying both of the following conditions:
+
+        1. String  starts with the prefix Mr., Mrs., Ms., Dr., or Er.
+        2. The remainder of string  (i.e., the rest of the string after the prefix) consists of 
+            one or more upper and/or lowercase English alphabetic letters (i.e., [a-z] and [A-Z]).
+    */
+    function regexVar1() {
+        let re = /^(Mr|Mrs|Ms|Dr|Er)\.[A-Za-z]+$/
+        return re;
+    }
+
+    let regex1 = regexVar1();
+    let test11 = 'Luciana';
+    let test12 = 'Mrs.Luciana';
+
+    console.log(!!test11.match(regex1));
+    console.log(!!test12.match(regex1));
+
+    //QUESTION 7 II:
+    /*
+    Complete the function in the editor below by returning a RegExp object,re, 
+    that matches every integer in some string .
+
+    Constraints:    
+
+    The length of string s is >= 3.
+    It's guaranteed that string s contains at least one integer.
+    */
+    function regexVar2() {
+        let re = /[0-9]+/g;
+        return re;
+    }
+    let regex2 = regexVar2();
+    let test21 = '1948948';
+    let test22 = '10May';
+
+    const r1 = test21.match(regex2);
+    const r2 = test22.match(regex2);
+    
+    for (const e of r1) {
+        console.log(e);
+    }
+    for (const e of r2) {
+        console.log(e);
+    }
+
+    </script>
+    </body>
+</html>

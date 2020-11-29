@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Day 2: Conditional Statements</title>
+    </head>
+    <body>
+        <script>
+        //QUESTION 2A:
+        /*
+        Using if...else statement compute the grade
+        */
+        function getGrade(score) {
+            let grade;
+            // Write your code here
+            if(score >= 0 && score <= 5) grade = 'F';
+            else if(score > 5 && score <= 10) grade = 'E';
+            else if(score > 10 && score <= 15) grade = 'D';
+            else if(score > 15 && score <= 20) grade = 'C';
+            else if(score > 20 && score <= 25) grade = 'B';    
+            else if(score > 25 && score <= 30) grade = 'A';  
+            
+            return grade;
+        }
+
+
+        console.log('Grade: ', getGrade(23));
+        console.log('Grade: ', getGrade(9));
+
+        //QUESTION 2B:
+        /*
+        Complete the getLetter(s) function. 
+        It has one parameter: a string, , consisting of lowercase English alphabetic letters (i.e., a through z). It must return A, B, C, or D depending on the following criteria:
+
+        If the first character in string is in the set {a, e, i, o, u}, then return A.
+        If the first character in string is in the set {b, c, d, f, g}, then return B.
+        If the first character in string  is in the set {h, j, k, l, m}, then return C.
+        If the first character in string  is in the set {n, p, q, r, s, t, v, w, x, y, z}, then return D.
+        Use switch statement
+        */
+        function getLetter(s) {
+            let letter;
+            switch (s[0]) {
+                case 'aeiou'.charAt('aeiou'.indexOf(s[0])):
+                    letter = 'A';
+                    break;
+                case 'bcdfg'.charAt('bcdfg'.indexOf(s[0])):
+                    letter = 'B';
+                    break;
+                case 'hjklm'.charAt('hjklm'.indexOf(s[0])):
+                    letter = 'C';
+                    break;
+                case 'mnpqrstvwxyz'.charAt('mnpqrstvwxyz'.indexOf(s[0])):
+                    letter = 'D';
+                    break;
+            }
+            
+            return letter;
+        }
+
+        console.log(getLetter('luciana'));
+        </script>
+    </body>
+</html>
